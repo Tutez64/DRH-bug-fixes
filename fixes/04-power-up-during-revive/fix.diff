@@ -1,0 +1,63 @@
+diff --git a/src/combat/weapon/ConsumableWeaponController.hx b/src/combat/weapon/ConsumableWeaponController.hx
+index 6ebb2c9..859cbfd 100644
+--- a/src/combat/weapon/ConsumableWeaponController.hx
++++ b/src/combat/weapon/ConsumableWeaponController.hx
+@@ -13,8 +13,9 @@ class ConsumableWeaponController extends WeaponController {
+ 
+ 	public function consume() {
+ 		if (consumableWeapon.canExecute() && consumableWeapon.getConsumableAttack() != null && consumableWeapon.getConsumableCount() > 0) {
+-			attack(consumableWeapon.getConsumableAttack().Id, false, 1, consumableWeapon.getConsumableCount() > 1);
+-			consumableWeapon.consume();
++			if (attack(consumableWeapon.getConsumableAttack().Id, false, 1, consumableWeapon.getConsumableCount() > 1)) {
++				consumableWeapon.consume();
++			}
+ 		}
+ 	}
+ 
+diff --git a/src/combat/weapon/WeaponController.hx b/src/combat/weapon/WeaponController.hx
+index 789b625..aaef65d 100644
+--- a/src/combat/weapon/WeaponController.hx
++++ b/src/combat/weapon/WeaponController.hx
+@@ -77,7 +77,7 @@ class WeaponController {
+ 		return mIsInCooldown;
+ 	}
+ 
+-	function attack(attackType:UInt, autoAim:Bool, attackSpeedModifier:Float = 1, autoStartCooldown:Bool = true) {
++	function attack(attackType:UInt, autoAim:Bool, attackSpeedModifier:Float = 1, autoStartCooldown:Bool = true):Bool {
+ 		var speedIndex:UInt;
+ 		var actorAttackSpeed:Float;
+ 		var buffMult:Float;
+@@ -91,7 +91,7 @@ class WeaponController {
+ 		}
+ 		if (mHero.manaPoints < trueManaCosts) {
+ 			notEnoughMana();
+-			return;
++			return false;
+ 		}
+ 		if (gmAttack.StatOffsets != null) {
+ 			speedIndex = (ASCompat.floatToInt(gmAttack.StatOffsets.speed) : UInt);
+@@ -105,7 +105,7 @@ class WeaponController {
+ 		mCurrentAttackTimeline = mWeapon.getAttackTimeline(attackType);
+ 		if (mCurrentAttackTimeline == null) {
+ 			Logger.error("AttackTimeline for attack: <" + attackType + "> was null. Ignoring onWeaponDown");
+-			return;
++			return false;
+ 		}
+ 		stopCallback = function() {
+ 			mCurrentAttackTimeline = null;
+@@ -113,9 +113,14 @@ class WeaponController {
+ 		mHero.attack(attackType, null, attackSpeedMultiplier, mCurrentAttackTimeline, function() {
+ 			finishedAttack(autoAim, (ASCompat.floatToInt(attackSpeedModifier) : UInt));
+ 		}, stopCallback, false, autoAim);
+-		if (autoStartCooldown && gmAttack.CooldownLength > 0) {
++
++		var attackStarted = (mCurrentAttackTimeline == null || mCurrentAttackTimeline.isPlaying);
++
++		if (attackStarted && autoStartCooldown && gmAttack.CooldownLength > 0) {
+ 			startCooldown();
+ 		}
++
++		return attackStarted;
+ 	}
+ 
+ 	function finishedAttack(autoAim:Bool, attackSpeedModifier:UInt) {

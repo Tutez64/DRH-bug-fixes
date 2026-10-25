@@ -1,0 +1,26 @@
+diff --git a/src/town/HomeState.hx b/src/town/HomeState.hx
+index d4624b4..a727f5b 100644
+--- a/src/town/HomeState.hx
++++ b/src/town/HomeState.hx
+@@ -271,10 +271,6 @@ class HomeState extends TownSubState {
+ 		mShopButton.isToTheLeftOf(mCreditsButton);
+ 		setupHeaderLinks();
+ 		mDBFacade.menuNavigationController.pushNewLayer("TOWN_MENU", mTownStateMachine.townHeader.determineCallback, mBattleButton, mBattleButton);
+-		if (mFriendLeaderboardDelayMenuNavigationLinkageTask != null) {
+-			mFriendLeaderboardDelayMenuNavigationLinkageTask.destroy();
+-		}
+-		mFriendLeaderboardDelayMenuNavigationLinkageTask = mLogicalWorkComponent.doLater(2, setupFriendLinks);
+ 	}
+ 
+ 	public function setupFriendLinks(gameClock:GameClock = null) {
+@@ -739,6 +735,10 @@ class HomeState extends TownSubState {
+ 			mUILeaderboard.currentStateName = "HomeState";
+ 			mUILeaderboard.hidePopup();
+ 		}
++		if (mFriendLeaderboardDelayMenuNavigationLinkageTask != null) {
++			mFriendLeaderboardDelayMenuNavigationLinkageTask.destroy();
++		}
++		mFriendLeaderboardDelayMenuNavigationLinkageTask = mLogicalWorkComponent.doLater(2, setupFriendLinks);
+ 		mTownStateMachine.townHeader.title = Locale.getString("TOWN_HEADER");
+ 		mTownStateMachine.townHeader.inHomeState = true;
+ 		mTownStateMachine.townHeader.showCloseButton(true);

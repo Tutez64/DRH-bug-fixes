@@ -1,0 +1,13 @@
+diff --git a/src/dr_floor/FloorEndingGui.hx b/src/dr_floor/FloorEndingGui.hx
+index 493224b..cd236df 100644
+--- a/src/dr_floor/FloorEndingGui.hx
++++ b/src/dr_floor/FloorEndingGui.hx
+@@ -189,7 +189,7 @@ class FloorEndingGui {
+ 	}
+ 
+ 	public function dungeonVictory() {
+-		if (mScreensRoot != null) {
++		if (mScreensRoot != null && mVictoryRenderer != null) {
+ 			displayVictory();
+ 			checkToAddRootToScene();
+ 		}

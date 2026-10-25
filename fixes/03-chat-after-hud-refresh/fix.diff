@@ -1,0 +1,19 @@
+diff --git a/src/uI/UIChatLog.hx b/src/uI/UIChatLog.hx
+index 5157688..a47e008 100644
+--- a/src/uI/UIChatLog.hx
++++ b/src/uI/UIChatLog.hx
+@@ -388,6 +388,14 @@ class UIChatLog {
+ 			mSlider.destroy();
+ 		}
+ 		mSlider = null;
++		if (mChatInputText != null) {
++			mChatInputText.destroy();
++		}
++		mChatInputText = null;
++		if (mChatSendButton != null) {
++			mChatSendButton.destroy();
++		}
++		mChatSendButton = null;
+ 		if (mChatLogButton != null) {
+ 			mChatLogButton.destroy();
+ 		}

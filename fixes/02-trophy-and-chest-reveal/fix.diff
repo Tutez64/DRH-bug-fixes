@@ -1,0 +1,17 @@
+diff --git a/src/distributedObjects/DistributedDungeonSummary.hx b/src/distributedObjects/DistributedDungeonSummary.hx
+index 182a77a..ef7a976 100644
+--- a/src/distributedObjects/DistributedDungeonSummary.hx
++++ b/src/distributedObjects/DistributedDungeonSummary.hx
+@@ -583,8 +583,10 @@ class DistributedDungeonSummary extends GameObject implements IDistributedDungeo
+ 					}
+ 
+ 				case 25:
+-					mDungeonAchievementPanelMovieClipRenderer.stop();
+-					mDungeonAchievementPanelMovieClipRenderer.clip.visible = false;
++					if (mDungeonAchievementPanelMovieClipRenderer != null && mDungeonAchievementPanelMovieClipRenderer.clip != null) {
++						mDungeonAchievementPanelMovieClipRenderer.stop();
++						mDungeonAchievementPanelMovieClipRenderer.clip.visible = false;
++					}
+ 					setRevealState((30 : UInt), 0.45);
+ 
+ 				case 30:

@@ -1,0 +1,41 @@
+diff --git a/src/town/MapTownSubState.hx b/src/town/MapTownSubState.hx
+index f28b5a9..de5ab9f 100644
+--- a/src/town/MapTownSubState.hx
++++ b/src/town/MapTownSubState.hx
+@@ -128,6 +128,10 @@ class MapTownSubState extends TownSubState {
+ 	}
+ 
+ 	override public function destroy() {
++		if (mWorldMap != null) {
++			mWorldMap.deinit();
++			mWorldMap = null;
++		}
+ 		if (mEventComponent != null) {
+ 			mEventComponent.destroy();
+ 			mEventComponent = null;
+diff --git a/src/uI/map/UIMapWorldMap.hx b/src/uI/map/UIMapWorldMap.hx
+index ef46493..080b8d1 100644
+--- a/src/uI/map/UIMapWorldMap.hx
++++ b/src/uI/map/UIMapWorldMap.hx
+@@ -959,6 +959,21 @@ class UIMapWorldMap {
+ 		if (mDBFacade.dbConfigManager.getConfigBoolean("ALLOW_HACKS_TO_PLAY_MAP_NODE", false)) {
+ 			tearDownHacksToPlayNode();
+ 		}
++		clearTooltipLayer();
++	}
++
++	function clearTooltipLayer() {
++		var tooltipLayer:flash.display.DisplayObjectContainer;
++		if (mDBFacade == null || mDBFacade.sceneGraphManager == null) {
++			return;
++		}
++		tooltipLayer = mDBFacade.sceneGraphManager.getLayer(107);
++		if (tooltipLayer == null) {
++			return;
++		}
++		while (tooltipLayer.numChildren > 0) {
++			tooltipLayer.removeChildAt(0);
++		}
+ 	}
+ 
+ 	function createPlayerAvatar() {
