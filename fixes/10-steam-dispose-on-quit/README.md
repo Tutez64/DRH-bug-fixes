@@ -17,13 +17,13 @@
 - Use it in `UIExitPopup` and `SocketErrorState`.
 - Make `onExit()` run once, in case `exiting` arrives twice.
 
-**AS3 location (build 25038329):**
+**AS3 location (build 26231687):**
 
 - `DungeonBustersProject.as`, `onExit()` (l. 107)
 - `Facade/DBFacade.as`, new method
 - `UI/Popup/UIExitPopup.as`, `exitApplicationAction()` (l. 56)
-- `StateMachine/MainStateMachine/SocketErrorState.as`, `errorDialogResponce()` (l. 38)
+- `StateMachine/MainStateMachine/SocketErrorState.as`, `errorDialogResponce()` (l. 40)
 
 **Seen in the official game:** yes, on the two in-game exit paths. The other two already work.
 
-**Links:** [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/be67f86e594376907e61864ee4bf82a0532d106f)
+**Links:** [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/b8825a0ed2d36974ada9529603826c98fbcf11b3)

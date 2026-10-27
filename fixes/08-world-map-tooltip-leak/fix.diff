@@ -14,7 +14,7 @@ index f28b5a9..de5ab9f 100644
  			mEventComponent.destroy();
  			mEventComponent = null;
 diff --git a/src/uI/map/UIMapWorldMap.hx b/src/uI/map/UIMapWorldMap.hx
-index ef46493..080b8d1 100644
+index 6408916..881e50d 100644
 --- a/src/uI/map/UIMapWorldMap.hx
 +++ b/src/uI/map/UIMapWorldMap.hx
 @@ -959,6 +959,21 @@ class UIMapWorldMap {

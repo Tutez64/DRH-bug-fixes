@@ -12,8 +12,8 @@ UncaughtError: RangeError: Error #1125
 
 **Fix:** return (and reset the index) when there are fewer than two buffs, clamp an out-of-range index, and skip entries without a `buffView`.
 
-**AS3 location (build 25038329):** `Actor/Buffs/BuffHandler.as`, `processSwappableBuffDisplays()` (l. 214)
+**AS3 location (build 26231687):** `Actor/Buffs/BuffHandler.as`, `processSwappableBuffDisplays()` (l. 214)
 
 **Seen in the official game:** yes, with the error above.
 
-**Links:** [issue #26](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/26), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/a3c3ccba969153a8e70e64bd6dd0735e2f2954b6)
+**Links:** [issue #26](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/26), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/16ee240230770a61a82441ed7aafbad8497356af)

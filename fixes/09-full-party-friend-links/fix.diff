@@ -1,5 +1,5 @@
 diff --git a/src/town/HomeState.hx b/src/town/HomeState.hx
-index d4624b4..a727f5b 100644
+index cf4850c..cd7bf85 100644
 --- a/src/town/HomeState.hx
 +++ b/src/town/HomeState.hx
 @@ -271,10 +271,6 @@ class HomeState extends TownSubState {

@@ -9,9 +9,9 @@ Each folder in `fixes/` holds:
 - `README.md`: symptom, cause, fix, where the code is in the AS3 source, and whether the bug was seen in the official game.
 - `fix.diff`: the change as committed and tested in DRH.
 
-The diffs are in Haxe, against DRH's conversion of build 25038329. The logic maps one to one to AS3; only the syntax differs:
+The diffs are in Haxe, against DRH's conversion of build 26231687. The logic maps one to one to AS3; only the syntax differs:
 
-- Haxe package paths are lowercase (`src/town/MapTownSubState.hx` is `Town/MapTownSubState.as`). Each README gives the AS3 file and function, with line numbers from build 25038329.
+- Haxe package paths are lowercase (`src/town/MapTownSubState.hx` is `Town/MapTownSubState.as`). Each README gives the AS3 file and function, with line numbers from build 26231687.
 - `ASCompat.*` calls, `(x : Int)` casts and `Std.string(x)` are conversion helpers. In AS3, write the plain expression.
 
 ## Fixes

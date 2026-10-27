@@ -12,10 +12,8 @@ UncaughtError: TypeError: Error #1009
 
 **Fix:** schedule `setupFriendLinks()` from `enterState()` instead of `setupState()`. `exitState()` already cancels the task.
 
-**AS3 location (build 25038329):** `Town/HomeState.as`, `setupState()` (l. 294 to 298) and `enterState()` (l. 828)
+**AS3 location (build 26231687):** `Town/HomeState.as`, `setupState()` (l. 294 to 298) and `enterState()` (l. 828)
 
 **Seen in the official game:** yes, with the error above. The game keeps running.
 
-**Links:** [issue #17](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/17), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/e5569bc7833ec371c5a0ab7bf3ce224db25deca6)
-
-The DRH commit message does not mention #17, which this commit fixes. [01](../01-world-map-entered-early)'s commit claims it instead.
+**Links:** [issue #17](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/17), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/fa276026454836463c6d19569dc715cbd77463a1)

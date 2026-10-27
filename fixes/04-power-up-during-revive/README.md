@@ -18,11 +18,11 @@ UncaughtError: TypeError: Error #1009
 - The cooldown only starts when the attack started.
 - `consume()` only spends the item when `attack()` returns `true`.
 
-**AS3 location (build 25038329):**
+**AS3 location (build 26231687):**
 
 - `Combat/Weapon/ConsumableWeaponController.as`, `consume()` (l. 17)
 - `Combat/Weapon/WeaponController.as`, `attack()` (l. 90 to 135)
 
 **Seen in the official game:** yes, with the error above.
 
-**Links:** [issue #22](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/22), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/824b1ab69cb1054b5d5d7a7b4784a81335919004)
+**Links:** [issue #22](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/22), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/38faee11f459334ab96e79613b078d1798477591)

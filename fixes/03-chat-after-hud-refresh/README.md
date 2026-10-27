@@ -6,8 +6,8 @@
 
 **Fix:** destroy and null `mChatInputText` and `mChatSendButton` in `destroy()`.
 
-**AS3 location (build 25038329):** `UI/UIChatLog.as`, `destroy()`, after `mSlider = null` (l. 439)
+**AS3 location (build 26231687):** `UI/UIChatLog.as`, `destroy()`, after `mSlider = null` (l. 439)
 
 **Seen in the official game:** not reproduced. The code is the same. The flag is off by default (`Brain/Utils/FeatureFlags.as`).
 
-**Links:** [issue #19](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/19), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/a65e7155de32033fe313835955ca55583cf93b39)
+**Links:** [issue #19](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/19), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/4c6b2568606f6a206221e75441205f780c1f7831)

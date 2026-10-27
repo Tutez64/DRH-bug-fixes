@@ -1,17 +1,17 @@
 diff --git a/src/DungeonBustersProject.hx b/src/DungeonBustersProject.hx
-index 7e83dd0..fc54b63 100644
+index 769e4f0..a2e2e47 100644
 --- a/src/DungeonBustersProject.hx
 +++ b/src/DungeonBustersProject.hx
-@@ -29,6 +29,8 @@ class DungeonBustersProject extends GameEntry {
- 
+@@ -13,6 +13,8 @@ import flash.events.InvokeEvent;
+ class DungeonBustersProject extends GameEntry {
  	var mDBFacade:DBFacade;
  
 +	var mSteamDisposed:Bool = false;
 +
  	public function new() {
  		super();
- 		var _loc1_:String = null;
-@@ -175,6 +177,10 @@ class DungeonBustersProject extends GameEntry {
+ 		stage.scaleMode = "showAll";
+@@ -81,6 +83,10 @@ class DungeonBustersProject extends GameEntry {
  	}
  
  	function onExit(e:Event) {
@@ -23,10 +23,10 @@ index 7e83dd0..fc54b63 100644
  		mDBFacade.mSteamworks.dispose();
  	}
 diff --git a/src/facade/DBFacade.hx b/src/facade/DBFacade.hx
-index 9107017..e142eb2 100644
+index 0d7e72f..bccc981 100644
 --- a/src/facade/DBFacade.hx
 +++ b/src/facade/DBFacade.hx
-@@ -47,6 +47,7 @@ import flash.display.Loader;
+@@ -50,6 +50,7 @@ import flash.display.Loader;
  import flash.display.MovieClip;
  import flash.display.Shape;
  import flash.display.Stage;
@@ -34,7 +34,7 @@ index 9107017..e142eb2 100644
  import flash.events.Event;
  import flash.events.FocusEvent;
  import flash.events.KeyboardEvent;
-@@ -844,6 +845,14 @@ class DBFacade extends Facade {
+@@ -910,6 +911,14 @@ class DBFacade extends Facade {
  		MemoryTracker.track(_loc4_, "DBUIOneButtonPopup - created in DBFacade.errorPopup()");
  	}
  
@@ -50,7 +50,7 @@ index 9107017..e142eb2 100644
  		var _loc2_:String = null;
  		var _loc1_:String = null;
 diff --git a/src/stateMachine/mainStateMachine/SocketErrorState.hx b/src/stateMachine/mainStateMachine/SocketErrorState.hx
-index 6180161..829a0bc 100644
+index dee52fc..d08e1b2 100644
 --- a/src/stateMachine/mainStateMachine/SocketErrorState.hx
 +++ b/src/stateMachine/mainStateMachine/SocketErrorState.hx
 @@ -5,7 +5,6 @@ import brain.utils.MemoryTracker;
@@ -61,7 +61,7 @@ index 6180161..829a0bc 100644
  
  class SocketErrorState extends State {
  	public static inline final NAME = "SocketErrorState";
-@@ -30,7 +29,7 @@ class SocketErrorState extends State {
+@@ -32,7 +31,7 @@ class SocketErrorState extends State {
  	}
  
  	function errorDialogResponce() {

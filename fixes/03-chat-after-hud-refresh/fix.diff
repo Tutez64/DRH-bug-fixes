@@ -1,5 +1,5 @@
 diff --git a/src/uI/UIChatLog.hx b/src/uI/UIChatLog.hx
-index 5157688..a47e008 100644
+index 8f5271a..1e0729b 100644
 --- a/src/uI/UIChatLog.hx
 +++ b/src/uI/UIChatLog.hx
 @@ -388,6 +388,14 @@ class UIChatLog {

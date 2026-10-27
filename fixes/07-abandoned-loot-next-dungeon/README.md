@@ -6,8 +6,8 @@
 
 **Fix:** in `close()`, pop the popup's navigation layer and clear `mUILayerName` before running the callback. `destroy()` then skips the pop.
 
-**AS3 location (build 25038329):** `UI/Popup/DBUIPopup.as`, `close()` (l. 235)
+**AS3 location (build 26231687):** `UI/Popup/DBUIPopup.as`, `close()` (l. 235)
 
 **Seen in the official game:** yes. The game does not crash or log an error, but it freezes and has to be restarted.
 
-**Links:** [issue #41](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/41), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/dfc8c4a99900a807fe73e9095160fb0b498179d3)
+**Links:** [issue #41](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/41), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/b160c8c7a572a7c949792a14e7cca31fc4a26d5f)

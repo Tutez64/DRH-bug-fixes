@@ -6,8 +6,8 @@
 
 **Fix:** only display the victory when `mVictoryRenderer` is not null.
 
-**AS3 location (build 25038329):** `Floor/FloorEndingGui.as`, `dungeonVictory()` (l. 206)
+**AS3 location (build 26231687):** `Floor/FloorEndingGui.as`, `dungeonVictory()` (l. 206)
 
 **Seen in the official game:** not confirmed. The code is the same.
 
-**Links:** [issue #27](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/27), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/b5d62e6f2893d5e3aafb2f0adaa191ca8b98d4e5)
+**Links:** [issue #27](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/27), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/e184d8518506048c1c9ce9b328f11e9050f9ef84)

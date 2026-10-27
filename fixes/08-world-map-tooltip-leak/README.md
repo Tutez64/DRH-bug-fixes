@@ -9,11 +9,11 @@
 - `UIMapWorldMap.deinit()` empties layer 107.
 - `MapTownSubState.destroy()` calls `mWorldMap.deinit()`.
 
-**AS3 location (build 25038329):**
+**AS3 location (build 26231687):**
 
 - `UI/Map/UIMapWorldMap.as`, end of `deinit()` (l. 936 to 1049)
 - `Town/MapTownSubState.as`, `destroy()` (l. 145)
 
 **Seen in the official game:** yes. 10 to 15 town-to-map round trips roughly halve the FPS.
 
-**Links:** [issue #42](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/42), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/df54c37add6c48dac5133b11c59bfee258a1f4c2)
+**Links:** [issue #42](https://github.com/Tutez64/Dungeon-Rampage-Haxe/issues/42), [DRH commit](https://github.com/Tutez64/Dungeon-Rampage-Haxe/commit/b1319f20370fa3b55b669e0f2a0ef457ca6353f1)
