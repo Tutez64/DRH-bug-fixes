@@ -28,6 +28,7 @@ The diffs are in Haxe, against DRH's conversion of build 26231687. The logic map
 | [08](fixes/08-world-map-tooltip-leak) | Each visit to the world map lowers FPS | Yes |
 | [09](fixes/09-full-party-friend-links) | Trying to join a full party throws in `setupFriendLinks()` | Yes (`TypeError #1009`) |
 | [10](fixes/10-steam-dispose-on-quit) | Quit and the socket error popup skip Steam cleanup | Yes (2 of the 4 exit paths) |
+| [11](fixes/11-hero-swap-stale-battle-popup) | Leaving an interface after swapping heroes gets the game stuck | Yes (`TypeError #1009`) |
 
 "Same code" means the bug was found in DRH and the AS3 code has the same logic. It can still fail in the official game when the timing lines up, even if it was not reproduced there.
 

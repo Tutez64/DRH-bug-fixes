@@ -1,0 +1,38 @@
+diff --git a/src/town/MapTownSubState.hx b/src/town/MapTownSubState.hx
+index de5ab9f..ba8f412 100644
+--- a/src/town/MapTownSubState.hx
++++ b/src/town/MapTownSubState.hx
+@@ -93,6 +93,7 @@ class MapTownSubState extends TownSubState {
+ 		super.enterState();
+ 		mEventComponent.addListener(FriendInfo.FRIEND_SCORES_PARSED, function(param1:flash.events.Event) {
+ 			var currentNodeButton:UIObject;
++			popBattlePopupLayer();
+ 			mWorldMap.deinit();
+ 			initMap();
+ 			currentNodeButton = mWorldMap.getCurrentNodeButton();
+@@ -112,6 +113,7 @@ class MapTownSubState extends TownSubState {
+ 
+ 	override public function exitState() {
+ 		super.exitState();
++		popBattlePopupLayer();
+ 		mWorldMap.deinit();
+ 		mDBFacade.menuNavigationController.popLayer("MAP_MENU");
+ 		if (mWorkComponent != null) {
+@@ -127,6 +129,17 @@ class MapTownSubState extends TownSubState {
+ 		}
+ 	}
+ 
++	/**
++		An open battle popup's layer sits above MAP_MENU and holds the popup's buttons, which deinit destroys
++		without popping it: MAP_MENU's popLayer was then refused, and the next layer popped focused a
++		destroyed button.
++	**/
++	function popBattlePopupLayer() {
++		if (mDBFacade.menuNavigationController.getTopUILayer() == "UI_MAP_BATTLE_POPUP") {
++			mDBFacade.menuNavigationController.popLayer("UI_MAP_BATTLE_POPUP");
++		}
++	}
++
+ 	override public function destroy() {
+ 		if (mWorldMap != null) {
+ 			mWorldMap.deinit();
